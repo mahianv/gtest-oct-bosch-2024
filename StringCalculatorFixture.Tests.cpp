@@ -27,42 +27,42 @@ TEST_F(StringCalculatorAddFixture, Returns_0_For_Zero){
   int actualValue=objUnderTest->Add(input);
   ASSERT_EQ(actualValue,expectedValue);
 }
-TEST_F(StringCalculatorTest, Returns_1_For_One) {
+TEST_F(StringCalculatorAddFixture, Returns_1_For_One) {
     string input = "1";
     int expectedValue = 1;
     int actualValue = calculator->Add(input);
     ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST_F(StringCalculatorTest, Returns_Sum_For_Two_Comma_Delimited_Numbers) {
+TEST_F(StringCalculatorAddFixture, Returns_Sum_For_Two_Comma_Delimited_Numbers) {
     string input = "1,2";
     int expectedValue = 3;
     int actualValue = calculator->Add(input);
     ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST_F(StringCalculatorTest, Returns_Sum_For_Multiple_Comma_Delimited_Numbers) {
+TEST_F(StringCalculatorAddFixture, Returns_Sum_For_Multiple_Comma_Delimited_Numbers) {
     string input = "1,2,3";
     int expectedValue = 6;
     int actualValue = calculator->Add(input);
     ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST_F(StringCalculatorTest, Returns_Sum_When_Delimited_With_Newline_And_Comma) {
+TEST_F(StringCalculatorAddFixture, Returns_Sum_When_Delimited_With_Newline_And_Comma) {
     string input = "1\n2,3";
     int expectedValue = 6;
     int actualValue = calculator->Add(input);
     ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST_F(StringCalculatorTest, Returns_Sum_When_Using_Custom_Delimiter) {
+TEST_F(StringCalculatorAddFixture, Returns_Sum_When_Using_Custom_Delimiter) {
     string input = "//;\n1;2";
     int expectedValue = 3;
     int actualValue = calculator->Add(input);
     ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST_F(StringCalculatorTest, Throws_Exception_For_Negative_Numbers_With_Message) {
+TEST_F(StringCalculatorAddFixture, Throws_Exception_For_Negative_Numbers_With_Message) {
     string input = "1,-2,-4,5";
 
     try {
@@ -75,14 +75,14 @@ TEST_F(StringCalculatorTest, Throws_Exception_For_Negative_Numbers_With_Message)
     }
 }
 
-TEST_F(StringCalculatorTest, Ignores_Numbers_Over_1000) {
+TEST_F(StringCalculatorAddFixture, Ignores_Numbers_Over_1000) {
     string input = "42,1001,3";
     int expectedValue = 45;
     int actualValue = calculator->Add(input);
     ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST_F(StringCalculatorTest, Uses_Multicharacter_Delimiter_To_Sum_Values) {
+TEST_F(StringCalculatorAddFixture, Uses_Multicharacter_Delimiter_To_Sum_Values) {
     string input = "//[***]\n8***2***3";
     int expectedValue = 13;
     int actualValue = calculator->Add(input);
@@ -96,7 +96,7 @@ TEST_F(StringCalculatorTest, Sums_Values_With_Multiple_Delimiters) {
     ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST_F(StringCalculatorTest, Sums_Values_With_Multiple_Multicharacter_Delimiters) {
+TEST_F(StringCalculatorAddFixture, Sums_Values_With_Multiple_Multicharacter_Delimiters) {
     string input = "//[**][%^]\n4**1%^9";
     int expectedValue = 14;
     int actualValue = calculator->Add(input);
