@@ -88,16 +88,10 @@ ASSERT_EQ(actualValue, expectedValue);
 TEST(string_calculator_add, when_passed_negative_numbers_throws_an_exception_listing_invalid_values){
 StringCalculator calculator;
 string input = "1,-2,-4,5";
- // Act & Assert
-    try {
-        calculator.Add(input);
-        FAIL() << "Expected invalid_argument exception";
-    } catch (const std::invalid_argument& e) {
-        // Assert that the exception message matches the expected output
-        ASSERT_STREQ(e.what(), "Negatives not allowed: -2,-4");
-    } catch (...) {
-        FAIL() << "Expected invalid_argument exception, but got a different exception";
-    }
+invalid_argument exception = EXPECT_THROW({calculator.Add(input);},invalid_argument);
+
+// Check exception message
+ASSERT_STREQ(exception.what(), "Negatives not allowed: -2,-4");
 }
 
 TEST(string_calculator_add, when_passed_numbers_over_1000_ignores_them) {
