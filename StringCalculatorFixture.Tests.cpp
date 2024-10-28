@@ -14,7 +14,7 @@ class StringCalculatorAddFixture:public testing::Test{
   }
 };
 
-TEST_F(StringCalcultorAddFixture, Returns_0_For_Empty){
+TEST_F(StringCalculatorAddFixture, Returns_0_For_Empty){
 string input="";
 int expectedValue=0;
 int actualValue =objUnderTest ->Add(input);
@@ -89,7 +89,7 @@ TEST_F(StringCalculatorAddFixture, Uses_Multicharacter_Delimiter_To_Sum_Values) 
     ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST_F(StringCalculatorTest, Sums_Values_With_Multiple_Delimiters) {
+TEST_F(StringCalculatorAddFixture, Sums_Values_With_Multiple_Delimiters) {
     string input = "//[*][%]\n4*2%3";
     int expectedValue = 9;
     int actualValue = calculator->Add(input);
