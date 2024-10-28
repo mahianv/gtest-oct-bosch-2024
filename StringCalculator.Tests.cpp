@@ -143,8 +143,8 @@ TEST(string_calculator_add, when_passed_multiple_delimiters_sums_on_each_delimit
 TEST(string_calculator_add,when_passed_multiple_multicharacter_delimiters_sums_on_each_delimiter ) {
     // Arrange
     StringCalculator calculator;
-    std::string input = "//[**][%^]\n4**1%^9";
-    int expectedValue = 14;  // 4 + 1 + 9 = 14
+    string input = "//[**][%^]\n4**1%^9";
+    int expectedValue = 14;  
 
     // Act
     int actualValue = calculator.Add(input);
