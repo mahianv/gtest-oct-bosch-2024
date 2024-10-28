@@ -66,7 +66,7 @@ TEST_F(StringCalculatorAddFixture, Throws_Exception_For_Negative_Numbers_With_Me
     string input = "1,-2,-4,5";
 
     try {
-        calculator->Add(input);
+        objUnderTest->Add(input);
         FAIL() << "Expected invalid_argument exception";
     } catch (const std::invalid_argument& e) {
         ASSERT_STREQ(e.what(), "Negatives not allowed: -2,-4");
