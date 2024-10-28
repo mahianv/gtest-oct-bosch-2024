@@ -17,7 +17,7 @@ ASSERT_EQ(expectedValue,actualValue);
 
 TEST(string_calculator_add,When_passed_a_single_number_returns_0_for_Zero){
 StringCalculator objUnderTest;
-string input =0;
+string input ="0";
 int expectedValue =0;
 //Act
 int actualValue =objUnderTest.Add(input);
@@ -28,7 +28,7 @@ ASSERT_EQ(expectedValue,actualValue);
 TEST(string_calculator_add,when_passed_a_single_number_returns_1_for_One){
 //Arrange
 StringCalculator objUnderTest;
-string input =1;
+string input ="1";
 int expectedValue =1;
 
 //Act
