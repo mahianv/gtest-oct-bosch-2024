@@ -6,7 +6,7 @@ TEST(string_calculator_add,when_passed_a_single_number_returns_0_for_Emplty){
 //Arrange
 StringCalculator objUnderTest;
 string input ="";
-int expectedValue =;
+int expectedValue =0;
 
 //Act
 int actualValue =objUnderTest.Add(input);
