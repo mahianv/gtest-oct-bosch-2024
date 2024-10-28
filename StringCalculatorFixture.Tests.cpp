@@ -3,7 +3,7 @@
 #include <string>
 
 //fixture class
-class StringCalculatoreAddFixture:public testing::Test{
+class StringCalculatorAddFixture:public testing::Test{
   protected:
     StringCalculator *objUnderTest;
   void Setup() override{
