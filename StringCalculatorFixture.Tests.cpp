@@ -13,10 +13,17 @@ class StringCalculatoreAddFixture:public testing::Test{
   }
 };
 
-TEST_F(StringCalcultorAddFixture, return_0_for_Empty(){
+TEST_F(StringCalcultorAddFixture, Returns_0_For_Empty){
 string input="";
 int expectedValue=0;
 int actualValue =objUnderTest ->Add(input);
 ASSERT_EQ(actualValue,expectedValue);
+}
 
+TEST_F(StringCalculatorAddFixture, Returns_0_For_Zero){
+  string input ="0";
+  int expectedValue =0;
+  int actualValue=objUnderTest->Add(input);
+  ASSERT_EQ(actualValue,expectedValue);
+}
 
