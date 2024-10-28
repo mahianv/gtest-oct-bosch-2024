@@ -6,10 +6,10 @@
 class StringCalculatorAddFixture:public testing::Test{
   protected:
     StringCalculator *objUnderTest;
-  void Setup() override{
+  void SetUp() override{
     objUnderTest=new StringCalculator();
   }
-  void Teardown(){
+  void TearDown(){
     delete objUnderTest;
   }
 };
