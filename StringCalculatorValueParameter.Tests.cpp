@@ -27,9 +27,8 @@ TEST_P(StringCalculatorAddParamFixture, Returns_Correct_Sum) {
 INSTANTIATE_TEST_SUITE_P(
     AddTests,
     StringCalculatorAddParamFixture,
-    ::testing::Values(tuple{"", 0}, tuple{"0", 0}, tuple{"1", 1}, tuple{"1,2", 3}, tuple{"1,2,3", 6},
-                      tuple{"1\n2,3", 6}, tuple{"//;\n1;2", 3}, tuple{"42,1001,3", 45}, tuple{"//[***]\n8***2***3", 13},
-                      tuple{"//[*][%]\n4*2%3", 9}, tuple{"//[**][%^]\n4**1%^9", 14)
+    Values(make_tuple("", 0),make_tuple("0", 0), make_tuple("1", 1), make_tuple("1,2", 3), make_tuple("1,2,3", 6),make_tuple("1\n2,3", 6), make_tuple("//;\n1;2", 3),
+            make_tuple("42,1001,3", 45),make_tuple("//[***]\n8***2***3", 13),make_tuple("//[*][%]\n4*2%3", 9),make_tuple("//[**][%^]\n4**1%^9", 14)
     )
 );
 
