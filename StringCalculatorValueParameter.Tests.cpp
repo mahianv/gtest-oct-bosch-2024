@@ -24,12 +24,14 @@ TEST_P(StringCalculatorAddParamFixture, Returns_Correct_Sum) {
     ASSERT_EQ(actualValue, expectedValue);
 }
 
-INSTANTIATE_TEST_SUITE_P(AddTests,StringCalculatorAddParamFixture,
-testing::Values(make_tuple("", 0),make_tuple("0", 0), make_tuple("1", 1), make_tuple("1,2", 3), make_tuple("1,2,3", 6),make_tuple("1\n2,3", 6), make_tuple("//;\n1;2", 3),
-            make_tuple("42,1001,3", 45),make_tuple("//[***]\n8***2***3", 13),make_tuple("//[*][%]\n4*2%3", 9),make_tuple("//[**][%^]\n4**1%^9", 14)
-    )
-);
+INSTANTIATE_TEST_SUITE_P(ValidValuesDataSet, StringCalculatorAddParameterizedFixture, 
+testing::Values(make_tuple("", 0),make_tuple("0", 0),make_tuple("1", 1),make_tuple("1,2", 3),make_tuple("1,2,3", 6),make_tuple("1\n2,3", 6),make_tuple("//;\n1;2", 3),
+    make_tuple("42,1001,3", 45),make_tuple("//[***]\n8***2***3", 13),make_tuple("//[*][%]\n4*2%3", 9),make_tuple("//[**][%^]\n4**1%^9", 14)
+));
 
+INSTANTIATE_TEST_SUITE_P(NegativeValuesDataSet, StringCalculatorAddParameterizedFixture, testing::Values(
+    make_tuple("1,-2", 0), make_tuple("5,-3,-8", 0) 
+));
 TEST_F(StringCalculatorAddFixture, Throw_Invalid_Argument_Exception_For_Negative_Numbers) {
     string input = "1,-2";
     EXPECT_THROW(objUnderTest->Add(input), invalid_argument);
