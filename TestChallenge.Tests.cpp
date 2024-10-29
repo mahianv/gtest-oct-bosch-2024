@@ -3,6 +3,6 @@
 
 TEST(AddFunctionTest, PositiveNumbers) {
     int result;
-    add(3, 5, &result);
-    EXPECT_EQ(result, 8);
+    add(10, 20, &result);
+    EXPECT_EQ(result, 30);
 }
